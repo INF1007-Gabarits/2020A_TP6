@@ -1,5 +1,6 @@
 import json
 import copy
+import numpy as np
 from typing import Union
 
 from vehicule import Vehicule
@@ -79,9 +80,10 @@ if __name__ == "__main__":
 
             winner[i] = v.position[2] >= trackLength
 
-    # for i in range(len(winner)):
-    #     if winner[i]:
-    #         racing_vehicules[i].celebrate_victory()
+    for i in range(len(winner)):
+        if winner[i]:
+             data["simulation"]["winner"] = racing_vehicules[i].nom
+             data["simulation"]["winning_msg"] = racing_vehicules[i].celebrer()
 
     with open('out.json', 'w') as out:
         json.dump(data, out)
