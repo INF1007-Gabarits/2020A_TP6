@@ -157,6 +157,12 @@ En regardant le diagramme de classes, vous remarquerez qu'il manque quelques pro
     friction_du_vehicule = somme_des_frictions_de_chaque_roue
     ```
 
+- __acceleration__ : cette propriété représente l'accélération du véhicule. On la calcule comme suit:
+
+    ```Python
+    acceleration = (traction_du_vehicule - trainee_du_vehicule - friction_du_vehicule) / poids_du_vehicule
+    ```
+
 Finalement, la classe Vehicule implémente aussi 2 fonctions, `accelerer(temps_ecoule)` et `celebrer()`.
 
 - La fonction `accelerer` sert à faire accélérer le véhicule en mettant à jour sa vitesse et sa position. Le parametre en entrée temps_écoulé représente le temps écoulé depuis la dernière mise à jour. Voici un petit diagramme qui explique comment calculer chaque propriété:
@@ -226,7 +232,7 @@ Un camion a 6 roues de camion (`roues_dict['camion']`), un chassis de camion (`c
 
 ## Partie 3
 
-La partie 3 est un petit bonus! En fait, pour voir si vous avez bien compris comment assembler des objets pour en faire d'autres, le but de cette partie est de créer votre propre véhicule et de l'ajouter à la course! Il doit être composé de n roues, d'un chassis et d'un moteur. Vous devez utiliser des composantes dans le dictionnaire des modèles (`dictionnaire_modeles.py`). Il faudra donc créer une nouvelle classe héritant de la classe `Vehicule`, qu'on pourra appeller comme suit:
+Pour voir si vous avez bien compris comment assembler des objets pour en faire d'autres, le but de cette partie est de créer votre propre véhicule et de l'ajouter à la course! Il doit être composé de n roues, d'un chassis et d'un moteur. Vous devez utiliser des composantes dans le dictionnaire des modèles (`dictionnaire_modeles.py`). Il faudra donc créer une nouvelle classe héritant de la classe `Vehicule`, qu'on pourra instancier comme suit:
 
 ```Python
 nom = "v r o o m"
@@ -235,10 +241,10 @@ position_dep = [0, 0, 0]
 votreVehicule1 = votreVehicule(nom, position_dep)
 ```
 
-La classe peut s'appeller comme vous voulez, et les propriétés des roues, du chassis et du moteur peuvent avoir les valeurs que vous souhaitez. Une fois que votre véhicule est créé, ajoutez le à la liste des véhicules dans le main (mais ne modifiez rien d'autre!) Sa position de départ doit être `[1.5 * TRACK_WIDTH, 0, 0]`.
+La classe peut s'appeller comme vous voulez, et les propriétés des roues, du chassis et du moteur peuvent avoir les valeurs que vous souhaitez. Une fois que votre véhicule est créé, ajoutez le à la liste des véhicules dans main.py (mais ne modifiez rien d'autre!) Sa position de départ doit être `[1.5 * TRACK_WIDTH, 0, 0]`.
 
 ## Pour aller plus loin
 
-Si jamais vous avez adoré ce TP et que vous voulez tout savoir sur la programmation orientée objet, je vous conseille d'aller lire là dessus un peu (https://realpython.com/python3-object-oriented-programming/, https://python.swaroopch.com/oop.html). Votre deuxième cours de programmation couvrira également spécifiquement cette matière. Sinon, je vous encourage à faire des projets personnels, vous allez vite vous rendre compte que la POO est souvent la forme de programmation utilisée pour des projets un peu plus complexes que de simples scripts.
+Si jamais vous avez aimé ce TP et que vous voulez tout savoir sur la programmation orientée objet, je vous conseille d'aller lire là dessus un peu (https://realpython.com/python3-object-oriented-programming/, https://python.swaroopch.com/oop.html). Votre deuxième cours de programmation couvrira également spécifiquement cette matière. Sinon, je vous encourage à faire des projets personnels, vous allez vite vous rendre compte que la POO est souvent la forme de programmation utilisée pour des projets un peu plus complexes que de simples scripts.
 
 Sinon, félicitations, c'était le dernier TP!!! :tada: :tada: :tada: :tada:
