@@ -283,7 +283,7 @@ def test_creer_custom_vehicule():
     try:
         class_name = module_name.capitalize()
         customVehiculeModule = __import__(module_name)
-        Vehicule = getattr(customVehiculeModule, "bad name")
+        Vehicule = getattr(customVehiculeModule, class_name)
 
         nom_vehicule = "monVehicule"
         position_dep = [-10, -3, 60]
