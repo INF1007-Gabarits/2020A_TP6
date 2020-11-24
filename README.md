@@ -9,11 +9,13 @@ Ce TP a pour objectif de vous introduire à la programmation orientée objet (PO
 
 ## Consignes à respecter
 
-Tout d'abord, assurez-vous d'avoir lu le fichier [instructions.md](instructions.md) et d'avoir téléchargé les fichiers que vous devrez compléter.
+Tout d'abord, assurez-vous d'avoir lu le fichier [readme.md](readme.md) au complet et d'avoir téléchargé les fichiers que vous devrez compléter.
 Pour ce TP, certaines contraintes sont à respecter:
 
 - Vous ne pouvez pas modifier le fichier meshes_mapping.py, sinon le projet final risque de ne pas fonctionner
 - Les imports sont déjà faits et les fichiers dont vous aurez besoin sont déjà créés, donc pas besoin de modifier la structure du projet
+- **Respecter guide de codage et les normes pep8, les docstrings de fonctions et fichiers sont facultatifs pour ce TP**
+- **Noms de variables et fonctions adéquats (concis, compréhensibles)**
 - Vous devez utiliser numpy pour tous les calculs de vitesse et de position :)
 
 ## Faire fonctionner le TP
