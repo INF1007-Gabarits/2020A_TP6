@@ -14,6 +14,8 @@ Pour ce TP, certaines contraintes sont à respecter:
 
 - Vous ne pouvez pas modifier le fichier meshes_mapping.py, sinon le projet final risque de ne pas fonctionner
 - Les imports sont déjà faits et les fichiers dont vous aurez besoin sont déjà créés, donc pas besoin de modifier la structure du projet
+- **Respecter guide de codage et les normes pep8, les docstrings de fonctions et fichiers sont facultatifs pour ce TP**
+- **Noms de variables et fonctions adéquats (concis, compréhensibles)**
 - Vous devez utiliser numpy pour tous les calculs de vitesse et de position :)
 
 ## Faire fonctionner le TP
