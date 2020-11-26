@@ -12,7 +12,7 @@ Ce TP a pour objectif de vous introduire à la programmation orientée objet (PO
 Tout d'abord, assurez-vous d'avoir lu le fichier [readme.md](readme.md) au complet et d'avoir téléchargé les fichiers que vous devrez compléter.
 Pour ce TP, certaines contraintes sont à respecter:
 
-- Vous ne pouvez pas modifier le fichier meshes_mapping.py, sinon le projet final risque de ne pas fonctionner
+- Vous ne pouvez pas modifier le fichier dictionnaire_modeles.py, sinon le projet final risque de ne pas fonctionner
 - Les imports sont déjà faits, donc pas besoin d'importer rien de nouveau
 - Vous devrez créer un fichier .py pour la partie 3 :)
 - **Respecter guide de codage et les normes pep8, les docstrings de fonctions et fichiers sont facultatifs pour ce TP**
