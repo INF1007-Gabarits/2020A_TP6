@@ -146,7 +146,7 @@ def test_creer_vehicule():
         result &= vehicule.trainee == 0.0
         result &= vehicule.friction == 0.0
         dt = 1
-        vehicule.accelerer(delta_time=dt)
+        vehicule.accelerer(temps_ecoule=dt)
         result &= vehicule.vitesse == [0, 0, 2.5]
         result &= vehicule.position == [45, -2, 59.5]
         result &= vehicule.trainee == 5.4
