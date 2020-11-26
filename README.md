@@ -1,7 +1,7 @@
 # TP6
 
 <!--- Changer la date de remise en modifiant le URL--->
-#### :alarm_clock: [Date de remise le dimanche 27 septembre 2020 à 23h59](https://www.timeanddate.com/countdown/generic?iso=20200927T2359&p0=165&msg=Remise&font=cursive&csz=1#)
+#### :alarm_clock: [Date de remise le dimanche 6 décembre à 23h59](https://www.timeanddate.com/countdown/generic?iso=20201206T2359&p0=%3A&msg=Remise+TP6&font=cursive&csz=1)
 
 ## Objectif
 
@@ -13,10 +13,10 @@ Tout d'abord, assurez-vous d'avoir lu le fichier [readme.md](readme.md) au compl
 Pour ce TP, certaines contraintes sont à respecter:
 
 - Vous ne pouvez pas modifier le fichier meshes_mapping.py, sinon le projet final risque de ne pas fonctionner
-- Les imports sont déjà faits et les fichiers dont vous aurez besoin sont déjà créés, donc pas besoin de modifier la structure du projet
+- Les imports sont déjà faits, donc pas besoin d'importer rien de nouveau
+- Vous devrez créer un fichier .py pour la partie 3 :)
 - **Respecter guide de codage et les normes pep8, les docstrings de fonctions et fichiers sont facultatifs pour ce TP**
 - **Noms de variables et fonctions adéquats (concis, compréhensibles)**
-- Vous devez utiliser numpy pour tous les calculs de vitesse et de position :)
 
 ## Faire fonctionner le TP
 
