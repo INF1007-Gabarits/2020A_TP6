@@ -15,7 +15,11 @@ from camion import Camion
 # Roulez ce fichier pour tester votre code :)
 
 # region test_composantes
-
+def compare_dictionnary(expected_dict, test_dict):
+        works = expected_dict.keys() == test_dict.keys()
+        for key in expected_dict:
+            works &= expected_dict[key] == test_dict[key]
+        return works
 
 def test_creer_composante():
     result = True
@@ -28,10 +32,9 @@ def test_creer_composante():
 
     result &= composante.nom == nom
     result &= composante.poids == poids
-
     expected_dict = {'_Composante__nom': 'maComposante',
                      '_Composante__poids': 10}
-    result &= composante.__dict__ == expected_dict
+    result &= compare_dictionnary(composante.__dict__, expected_dict)
 
     return result
 
@@ -52,7 +55,7 @@ def test_creer_moteur():
 
     expected_dict = {'_Moteur__acceleration': 2.5,
                      '_Composante__nom': 'monMoteur', '_Composante__poids': 10}
-    result &= moteur.__dict__ == expected_dict
+    result &= compare_dictionnary(moteur.__dict__, expected_dict)
 
     return result
 
@@ -76,7 +79,8 @@ def test_creer_chassis():
 
     expected_dict = {'_Chassis__aire_frontale': 2.4, '_Chassis__coefficient_trainee': 0.6,
                      '_Composante__nom': 'monChassis', '_Composante__poids': 10}
-    result &= chassis.__dict__ == expected_dict
+    result &= compare_dictionnary(chassis.__dict__, expected_dict)
+    
 
     return result
 
@@ -100,7 +104,7 @@ def test_creer_roue():
 
     expected_dict = {'_Roue__poids_supporte': 10, '_Roue__coefficient_friction': 0.4,
                      '_Composante__nom': 'maRoue', '_Composante__poids': 10}
-    result &= roue.__dict__ == expected_dict
+    result &= compare_dictionnary(roue.__dict__, expected_dict)
 
     return result
 # endregion
