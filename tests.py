@@ -1,6 +1,8 @@
 from os import listdir
 from os.path import isfile, join
 import sys
+from typing import Union
+import numpy as np
 
 from composante import Composante
 from moteur import Moteur
@@ -15,11 +17,7 @@ from camion import Camion
 # Roulez ce fichier pour tester votre code :)
 
 # region test_composantes
-def compare_dictionnary(expected_dict, test_dict):
-        works = expected_dict.keys() == test_dict.keys()
-        for key in expected_dict:
-            works &= expected_dict[key] == test_dict[key]
-        return works
+
 
 def test_creer_composante():
     result = True
@@ -32,12 +30,12 @@ def test_creer_composante():
 
     result &= composante.nom == nom
     result &= composante.poids == poids
+
     expected_dict = {'_Composante__nom': 'maComposante',
                      '_Composante__poids': 10}
-    result &= compare_dictionnary(composante.__dict__, expected_dict)
+    result &= composante.__dict__ == expected_dict
 
     return result
-
 
 def test_creer_moteur():
     result = True
@@ -55,7 +53,7 @@ def test_creer_moteur():
 
     expected_dict = {'_Moteur__acceleration': 2.5,
                      '_Composante__nom': 'monMoteur', '_Composante__poids': 10}
-    result &= compare_dictionnary(moteur.__dict__, expected_dict)
+    result &= moteur.__dict__ == expected_dict
 
     return result
 
@@ -79,8 +77,7 @@ def test_creer_chassis():
 
     expected_dict = {'_Chassis__aire_frontale': 2.4, '_Chassis__coefficient_trainee': 0.6,
                      '_Composante__nom': 'monChassis', '_Composante__poids': 10}
-    result &= compare_dictionnary(chassis.__dict__, expected_dict)
-    
+    result &= chassis.__dict__ == expected_dict
 
     return result
 
@@ -104,12 +101,16 @@ def test_creer_roue():
 
     expected_dict = {'_Roue__poids_supporte': 10, '_Roue__coefficient_friction': 0.4,
                      '_Composante__nom': 'maRoue', '_Composante__poids': 10}
-    result &= compare_dictionnary(roue.__dict__, expected_dict)
+    result &= roue.__dict__ == expected_dict
 
     return result
 # endregion
 
 # region test_vehicules
+def compare_arrays(arr1: Union[list, np.array], arr2: Union[list, np.array]):
+    arr1 = arr1.tolist() if isinstance(arr1, np.ndarray) else arr1
+    arr2 = arr2.tolist() if isinstance(arr2, np.ndarray) else arr2
+    return arr1 == arr2
 
 
 def test_creer_vehicule():
@@ -146,13 +147,14 @@ def test_creer_vehicule():
         result &= vehicule.celebrer() == None
 
         result &= vehicule.position == position_dep
-        result &= vehicule.vitesse == [0, 0, 0]
+        result &= compare_arrays(vehicule.vitesse, [0, 0, 0])
+        print(result)
         result &= vehicule.trainee == 0.0
         result &= vehicule.friction == 0.0
         dt = 1
         vehicule.accelerer(temps_ecoule=dt)
-        result &= vehicule.vitesse == [0, 0, 2.5]
-        result &= vehicule.position == [45, -2, 59.5]
+        result &= compare_arrays(vehicule.vitesse, [0, 0, 2.5])
+        result &= compare_arrays(vehicule.position, [45, -2, 59.5])
         result &= vehicule.trainee == 5.4
         result &= vehicule.friction == 3.0
 
@@ -186,8 +188,8 @@ def test_creer_moto():
         return False
 
     result &= moto.nom == nom_moto
-    result &= moto.vitesse == [0, 0, 0]
-    result &= moto.position == position_dep
+    result &= compare_arrays(moto.vitesse, [0, 0, 0])
+    result &= compare_arrays(moto.position, position_dep)
     result &= moto.poids == 202
     result &= moto.traction == 1878.6000000000001
     result &= moto.trainee == 0.0
@@ -215,8 +217,8 @@ def test_creer_auto():
         return False
 
     result &= auto.nom == nom_auto
-    result &= auto.vitesse == [0, 0, 0]
-    result &= auto.position == position_dep
+    result &= compare_arrays(auto.vitesse, [0, 0, 0])
+    result &= compare_arrays(auto.position, position_dep)
     result &= auto.poids == 1421
     result &= auto.traction == 11368
     result &= auto.trainee == 0.0
@@ -244,8 +246,8 @@ def test_creer_camion():
         return False
 
     result &= camion.nom == nom_camion
-    result &= camion.vitesse == [0, 0, 0]
-    result &= camion.position == position_dep
+    result &= compare_arrays(camion.vitesse, [0, 0, 0])
+    result &= compare_arrays(camion.position, position_dep)
     result &= camion.poids == 9368
     result &= camion.traction == 37472
     result &= camion.trainee == 0.0
@@ -298,8 +300,8 @@ def test_creer_custom_vehicule():
         return False
 
     result &= vehicule.nom == nom_vehicule
-    result &= vehicule.vitesse == [0, 0, 0]
-    result &= vehicule.position == position_dep
+    result &= compare_arrays(vehicule.vitesse, [0, 0, 0])
+    result &= compare_arrays(vehicule.position, position_dep)
     result &= vehicule.trainee == 0.0
     result &= vehicule.friction == 0.0
 
